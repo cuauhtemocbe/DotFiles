@@ -1,0 +1,128 @@
+{
+  "python.testing.pytestArgs": ["tests"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.formatting.provider": "black",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Python strings single quoted",
+        "scope": [
+          "string.quoted.single.python",
+          "string.quoted"
+        ],
+        "settings": {
+          "foreground": "#FF5FC0"
+        }
+      },
+      {
+        "name": "Python strings triple quoted",
+        "scope": [
+          "string.quoted.multi.python",
+        ],
+        "settings": {
+          "foreground": "#D9D9D9"
+        }
+      },
+      {
+        "name": "Python storage type",
+        "scope": [
+          "storage.type.class.python",
+          "storage.type.function.python",
+          "meta.class.python",
+          "meta.function.python"
+        ],
+        "settings": {
+          "foreground": "#58B0E3"
+        },
+        // "examples": ["def", "class"]
+      },
+      {
+        "name": "Python function names",
+        "scope": [
+          "entity.name.function.python"
+        ],
+        "settings": {
+          "foreground": "#1AC5B0"
+        }
+        // "examples": [getData]
+      },
+      {
+        "name": "Python class definition",
+        "scope": [
+          "entity.name.type.class.python"
+        ],
+        "settings": {
+          "foreground": "#1AC5B0"
+        }
+        // "examples": [getData]
+      },
+      {
+        "name": "Python function call",
+        "scope": [
+          "meta.function-call.generic.python"
+        ],
+        "settings": {
+          "foreground": "#1AC5B0"
+        }
+        // "examples": [getData()]
+      },
+      {
+        "name": "Python keyword control",
+        "scope": [
+          // import, from, as
+          "keyword.control.import.python",
+          // , - > 
+          "punctuation.separator.annotation.result.python",
+          "punctuation.separator.period.python",
+          "punctuation.separator.element.python",
+          "punctuation.separator.arguments.python"
+        ],
+        "settings": {
+          "foreground": "#FC618D"
+        }
+      },
+      {
+        "name": "Python attributes",
+        "scope": [
+          // parameters
+          "variable.parameter.function-call.python",
+          "variable.parameter.function.language.python",
+          // __init__
+          "support.function.magic.python"
+        ],
+        "settings": {
+          "foreground": "#F7DB6A"
+        }
+      },
+      {
+        "name": "Python member",
+        "scope": [
+          // pd.DataFrame affects to DataFrame
+          "meta.member.access.python"
+        ],
+        "settings": {
+          "foreground": "#7AD3F8"
+        }
+      },
+      {
+        "name": "Python source",
+        "scope": [
+          "source.python",
+        ],
+        "settings": {
+          "foreground": "#58B0E3"
+        }
+      },
+    ]
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "namespace": {
+        "foreground": "#00CED1"
+      }
+    }
+  }
+}
