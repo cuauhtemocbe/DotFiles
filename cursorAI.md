@@ -10,7 +10,7 @@ Guarda el archivo `.AppImage` en tu carpeta de Descargas.
 ## 📂 2. Mover y dar permisos de ejecución
 ```bash
 mkdir -p ~/.local/bin
-mv ~/Descargas/Cursor-*.AppImage ~/.local/bin/Cursor.AppImage
+mv ~/Downloads/Cursor-*.AppImage ~/.local/bin/Cursor.AppImage
 chmod +x ~/.local/bin/Cursor.AppImage
 ```
 
