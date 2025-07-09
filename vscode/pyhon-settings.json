@@ -3,9 +3,25 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "python.formatting.provider": "black",
-  "editor.semanticHighlighting.enabled": true,
+  "editor.semanticHighlighting.enabled": false,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
+      {
+        "name": "Python keyword control",
+        "scope": [
+          // import, from, as
+          "keyword.control.import.python",
+          // , - > 
+          "punctuation.separator.annotation.result.python",
+          "punctuation.separator.period.python",
+          "punctuation.separator.element.python",
+          "punctuation.separator.arguments.python",
+          "keyword.control.flow.python"
+        ],
+        "settings": {
+          "foreground": "#FC618D"
+        }
+      },
       {
         "name": "Python strings single quoted",
         "scope": [
@@ -13,7 +29,7 @@
           "string.quoted"
         ],
         "settings": {
-          "foreground": "#da66ab"
+          "foreground": "#E0E0E0"
         }
       },
       {
@@ -22,7 +38,18 @@
           "string.quoted.multi.python",
         ],
         "settings": {
-          "foreground": "#D9D9D9"
+          "foreground": "#E0E0E0",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Python comment",
+        "scope": [
+          "comment.line.number-sign.python",
+        ],
+        "settings": {
+          "foreground": "#8d8c8c",
+          "fontStyle": "italic"
         }
       },
       {
@@ -68,21 +95,7 @@
         }
         // "examples": [getData()]
       },
-      {
-        "name": "Python keyword control",
-        "scope": [
-          // import, from, as
-          "keyword.control.import.python",
-          // , - > 
-          "punctuation.separator.annotation.result.python",
-          "punctuation.separator.period.python",
-          "punctuation.separator.element.python",
-          "punctuation.separator.arguments.python"
-        ],
-        "settings": {
-          "foreground": "#FC618D"
-        }
-      },
+      
       {
         "name": "Python attributes",
         "scope": [
@@ -116,13 +129,5 @@
         }
       },
     ]
-  },
-  "editor.semanticTokenColorCustomizations": {
-    "enabled": true,
-    "rules": {
-      "namespace": {
-        "foreground": "#00CED1"
-      }
-    }
   }
 }
