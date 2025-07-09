@@ -1,0 +1,133 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "jest.jestCommandLine": "npm run test-single",
+  "jest.rootPath": "./",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "jest.jestCommandLine": "node_modules/.bin/jest --config=jest.config.local.ts",
+  "jest.runAllTestsFirst": false,
+  "jest.runMode": "on-demand",
+  "editor.semanticHighlighting.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "JS keyword control",
+        "scope": [
+          // import, export, return, if, else, etc.
+          "keyword.control",
+          "keyword.control.flow.js",
+          "keyword.control.import.js",
+          "keyword.control.export.js",
+          "meta.brace.round.js",
+          "keyword.operator",
+        ],
+        "settings": {
+          "foreground": "#FC618D"
+        }
+      },
+      {
+        "name": "JS strings single quoted",
+        "scope": ["string.quoted.single.js", "string.quoted"],
+        "settings": {
+          "foreground": "#E0E0E0"
+        }
+      },
+      {
+        "name": "JS template strings",
+        "scope": ["string.template.js"],
+        "settings": {
+          "foreground": "#E0E0E0",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "JS documentation comments",
+        "scope": [
+          "comment.block.documentation.js",
+          "comment.block.documentation",
+          "comment.line.double-slash.js"
+        ],
+        "settings": {
+          "foreground": "#7A7A7A",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "JS storage types",
+        "scope": [
+          "variable.other.readwrite.alias.js",
+          "variable.other.object.js",
+          "storage.type.class.js",
+          "storage.type.function.js",
+          "meta.class.js",
+          "meta.function.js"
+        ],
+        "settings": {
+          "foreground": "#58B0E3"
+        }
+      },
+      {
+        "name": "JS variables",
+        "scope": [
+          "variable.other.constant.js",
+          "variable.other.readwrite.js",
+          "meta.object-literal.key.js"
+        ],
+        "settings": {
+          "foreground": "#00BFFF"
+        }
+      },
+      {
+        "name": "JS function names",
+        "scope": ["entity.name.function.js"],
+        "settings": {
+          "foreground": "#1AC5B0"
+        }
+      },
+      {
+        "name": "JS class definitions",
+        "scope": ["entity.name.type.class.js"],
+        "settings": {
+          "foreground": "#1AC5B0"
+        }
+      },
+      {
+        "name": "JS function calls",
+        "scope": ["meta.function-call.js", "meta.function-call"],
+        "settings": {
+          "foreground": "#1AC5B0"
+        }
+      },
+      {
+        "name": "JS parameters & builtins",
+        "scope": ["variable.parameter.js", "support.function.js"],
+        "settings": {
+          "foreground": "#F7DB6A"
+        }
+      },
+      {
+        "name": "JS member access",
+        "scope": [
+          // obj.prop
+          "meta.property.object.js",
+          "meta.member.access.js",
+          "variable.object.property.js"
+        ],
+        "settings": {
+          "foreground": "#7AD3F8"
+        }
+      },
+      {
+        "name": "JS source",
+        "scope": ["source.js", "source.ts", "source.jsx", "source.tsx"],
+        "settings": {
+          "foreground": "#58B0E3"
+        }
+      }
+    ]
+  }
+}
