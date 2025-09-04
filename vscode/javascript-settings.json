@@ -3,6 +3,7 @@
   "editor.fontLigatures": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
+  "window.restoreWindows": "none",
   "jest.jestCommandLine": "npm run test-single",
   "jest.rootPath": "./",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
