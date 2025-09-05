@@ -1,3 +1,5 @@
+alias killmongo='sudo kill -9 $(sudo lsof -ti:27017)'
+
 alias obsidian='~/Applications/Obsidian/Obsidian-1.8.10.AppImage --no-sandbox'
 
 docker() {
