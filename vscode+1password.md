@@ -15,7 +15,7 @@ nano ~/.local/share/applications/code-projects-env.desktop
 [Desktop Entry]
 Name=Visual Studio Code (Projects env)
 Comment=Open VS Code with env from 1Password
-Exec=sh -c 'op run --env-file=/home/kuautli/Projects/.env -- code /home/kuautli/Projects'
+Exec=sh -c 'op run --env-file=/home/user/Projects/.env -- code /home/user/Projects'
 Icon=vscode
 Type=Application
 Terminal=false
