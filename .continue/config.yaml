@@ -4,10 +4,10 @@ schema: v1
 models:
   - uses: anthropic/claude-3-7-sonnet
     with:
-      ANTHROPIC_API_KEY: {{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
   - uses: anthropic/claude-4-sonnet
     with:
-      ANTHROPIC_API_KEY: {{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
   - uses: anthropic/claude-4-1-opus
     with:
-      ANTHROPIC_API_KEY: {{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
