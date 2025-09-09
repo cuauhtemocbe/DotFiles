@@ -1,52 +1,69 @@
 {
+  // ===== WINDOW & EDITOR SETTINGS =====
+  "window.restoreWindows": "none",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
+  "editor.semanticHighlighting.enabled": false,
+
+  // ===== FILE MANAGEMENT =====
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
-  "window.restoreWindows": "none",
-  "jest.jestCommandLine": "npm run test-single",
-  "jest.rootPath": "./",
+
+  // ===== CODE FORMATTING =====
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // ===== JEST TESTING =====
   "jest.jestCommandLine": "node_modules/.bin/jest --config=jest.config.local.ts",
+  "jest.rootPath": "./",
   "jest.runAllTestsFirst": false,
   "jest.runMode": "on-demand",
-  "editor.semanticHighlighting.enabled": false,
+
+  // ===== SYNTAX HIGHLIGHTING =====
   "editor.tokenColorCustomizations": {
     "textMateRules": [
+      // Control Flow & Keywords
       {
         "name": "JS keyword control",
         "scope": [
-          // import, export, return, if, else, etc.
-          "keyword.control",
-          "keyword.control.flow.js",
-          "keyword.control.import.js",
-          "keyword.control.export.js",
-          "meta.brace.round.js",
-          "keyword.operator",
+          "keyword.control",              // General control keywords
+          "keyword.control.flow.js",      // if, else, for, while, etc.
+          "keyword.control.import.js",    // import
+          "keyword.control.export.js",    // export
+          "keyword.operator",             // =, +, -, etc.
+          "meta.brace.round.js"           // ()
         ],
         "settings": {
           "foreground": "#FC618D"
         }
       },
+
+      // String Literals
       {
         "name": "JS strings single quoted",
-        "scope": ["string.quoted.single.js", "string.quoted"],
+        "scope": [
+          "string.quoted.single.js",
+          "string.quoted"
+        ],
         "settings": {
           "foreground": "#E0E0E0"
         }
       },
       {
         "name": "JS template strings",
-        "scope": ["string.template.js"],
+        "scope": [
+          "string.template.js"
+        ],
         "settings": {
           "foreground": "#E0E0E0",
           "fontStyle": "italic"
         }
       },
+
+      // Comments
       {
         "name": "JS documentation comments",
         "scope": [
@@ -59,66 +76,85 @@
           "fontStyle": "italic"
         }
       },
+
+      // Definitions & Declarations
       {
         "name": "JS storage types",
         "scope": [
+          "storage.type.class.js",        // class keyword
+          "storage.type.function.js",     // function keyword
+          "meta.class.js",                // class context
+          "meta.function.js",             // function context
           "variable.other.readwrite.alias.js",
-          "variable.other.object.js",
-          "storage.type.class.js",
-          "storage.type.function.js",
-          "meta.class.js",
-          "meta.function.js"
+          "variable.other.object.js"
         ],
         "settings": {
           "foreground": "#58B0E3"
         }
       },
+
+      // Variables & Constants
       {
         "name": "JS variables",
         "scope": [
-          "variable.other.constant.js",
-          "variable.other.readwrite.js",
-          "meta.object-literal.key.js"
+          "variable.other.constant.js",   // const variables
+          "variable.other.readwrite.js",  // let/var variables
+          "meta.object-literal.key.js"    // object keys
         ],
         "settings": {
           "foreground": "#00BFFF"
         }
       },
+
+      // Names & Identifiers
       {
         "name": "JS function names",
-        "scope": ["entity.name.function.js"],
+        "scope": [
+          "entity.name.function.js"
+        ],
         "settings": {
           "foreground": "#1AC5B0"
         }
       },
       {
         "name": "JS class definitions",
-        "scope": ["entity.name.type.class.js"],
+        "scope": [
+          "entity.name.type.class.js"
+        ],
         "settings": {
           "foreground": "#1AC5B0"
         }
       },
       {
         "name": "JS function calls",
-        "scope": ["meta.function-call.js", "meta.function-call"],
+        "scope": [
+          "meta.function-call.js",
+          "meta.function-call"
+        ],
         "settings": {
           "foreground": "#1AC5B0"
         }
       },
+
+      // Parameters & Built-ins
       {
         "name": "JS parameters & builtins",
-        "scope": ["variable.parameter.js", "support.function.js"],
+        "scope": [
+          "variable.parameter.js",        // function parameters
+          "support.function.js"           // built-in functions
+        ],
         "settings": {
           "foreground": "#F7DB6A"
         }
       },
+
+      // Member Access & Source
       {
         "name": "JS member access",
         "scope": [
-          // obj.prop
-          "meta.property.object.js",
-          "meta.member.access.js",
-          "variable.object.property.js"
+          "meta.property.object.js",      // obj.prop
+          "meta.member.access.js",        // member access
+          "variable.object.property.js"   // object properties
         ],
         "settings": {
           "foreground": "#7AD3F8"
@@ -126,7 +162,12 @@
       },
       {
         "name": "JS source",
-        "scope": ["source.js", "source.ts", "source.jsx", "source.tsx"],
+        "scope": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.tsx"
+        ],
         "settings": {
           "foreground": "#58B0E3"
         }

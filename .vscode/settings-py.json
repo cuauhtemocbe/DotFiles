@@ -1,30 +1,42 @@
 {
+  // ===== WINDOW & EDITOR SETTINGS =====
+  "window.restoreWindows": "none",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "window.restoreWindows": "none",
-  "python.testing.pytestArgs": ["tests"],
-  "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
-  "python.formatting.provider": "black",
   "editor.semanticHighlighting.enabled": false,
+
+  // ===== FILE MANAGEMENT =====
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // ===== PYTHON SETTINGS =====
+  "python.formatting.provider": "black",
+  
+  // Python Testing
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["tests"],
+
+  // ===== SYNTAX HIGHLIGHTING =====
   "editor.tokenColorCustomizations": {
     "textMateRules": [
+      // Control Flow & Keywords
       {
         "name": "Python keyword control",
         "scope": [
-          // import, from, as
-          "keyword.control.import.python",
-          // , - > 
-          "punctuation.separator.annotation.result.python",
-          "punctuation.separator.period.python",
-          "punctuation.separator.element.python",
-          "punctuation.separator.arguments.python",
-          "keyword.control.flow.python"
+          "keyword.control.import.python",        // import, from, as
+          "keyword.control.flow.python",          // if, for, while, etc.
+          "punctuation.separator.annotation.result.python",  // ->
+          "punctuation.separator.period.python",             // .
+          "punctuation.separator.element.python",            // ,
+          "punctuation.separator.arguments.python"           // , in function args
         ],
         "settings": {
           "foreground": "#FC618D"
         }
       },
+
+      // String Literals
       {
         "name": "Python strings single quoted",
         "scope": [
@@ -38,36 +50,41 @@
       {
         "name": "Python strings triple quoted",
         "scope": [
-          "string.quoted.multi.python",
+          "string.quoted.multi.python"
         ],
         "settings": {
           "foreground": "#E0E0E0",
           "fontStyle": "italic"
         }
       },
+
+      // Comments
       {
         "name": "Python comment",
         "scope": [
-          "comment.line.number-sign.python",
+          "comment.line.number-sign.python"
         ],
         "settings": {
           "foreground": "#8d8c8c",
           "fontStyle": "italic"
         }
       },
+
+      // Definitions & Declarations
       {
         "name": "Python storage type",
         "scope": [
-          "storage.type.class.python",
-          "storage.type.function.python",
+          "storage.type.class.python",    // class keyword
+          "storage.type.function.python", // def keyword
           "meta.class.python",
           "meta.function.python"
         ],
         "settings": {
           "foreground": "#58B0E3"
-        },
-        // "examples": ["def", "class"]
+        }
       },
+
+      // Names & Identifiers
       {
         "name": "Python function names",
         "scope": [
@@ -76,7 +93,6 @@
         "settings": {
           "foreground": "#1AC5B0"
         }
-        // "examples": [getData]
       },
       {
         "name": "Python class definition",
@@ -86,7 +102,6 @@
         "settings": {
           "foreground": "#1AC5B0"
         }
-        // "examples": [getData]
       },
       {
         "name": "Python function call",
@@ -96,27 +111,26 @@
         "settings": {
           "foreground": "#1AC5B0"
         }
-        // "examples": [getData()]
       },
       
+      // Parameters & Attributes
       {
         "name": "Python attributes",
         "scope": [
-          // parameters
-          "variable.parameter.function-call.python",
-          "variable.parameter.function.language.python",
-          // __init__
-          "support.function.magic.python"
+          "variable.parameter.function-call.python",    // function parameters
+          "variable.parameter.function.language.python", // built-in parameters
+          "support.function.magic.python"               // __init__, __str__, etc.
         ],
         "settings": {
           "foreground": "#F7DB6A"
         }
       },
+
+      // Member Access & Source
       {
         "name": "Python member",
         "scope": [
-          // pd.DataFrame affects to DataFrame
-          "meta.member.access.python"
+          "meta.member.access.python"  // pd.DataFrame -> DataFrame
         ],
         "settings": {
           "foreground": "#7AD3F8"
@@ -125,12 +139,12 @@
       {
         "name": "Python source",
         "scope": [
-          "source.python",
+          "source.python"
         ],
         "settings": {
           "foreground": "#58B0E3"
         }
-      },
+      }
     ]
   }
 }
