@@ -1,0 +1,14 @@
+[
+    // 1) Si NO está abierto el chat → abrirlo
+    {
+        "key": "ctrl+shift+i",
+        "command": "github.copilot.chat.focus",
+        "when": "!view.github.copilot.chatViewVisible"
+    },
+    // 2) Si el chat SÍ está abierto → agregar selección al chat
+    {
+        "key": "ctrl+shift+i",
+        "command": "github.copilot.chat.addSelection",
+        "when": "view.github.copilot.chatViewVisible"
+    }
+]
