@@ -1,0 +1,38 @@
+---
+name: commit-writer
+description: Genera mensajes de commit. Úsalo cuando el usuario pida hacer un commit, resumir cambios git, o necesite un mensaje para git commit.
+---
+
+Analiza los cambios con `git diff --staged` (o `git diff` si no hay nada en staging). Agrupa los cambios por tipo y genera el mensaje siguiendo estas reglas:
+
+## Formato
+
+```
+<tipo>(<scope opcional>): <descripción corta en inglés>
+```
+
+## Tipos permitidos
+
+- `feat`     → nueva funcionalidad
+- `fix`      → corrección de bug
+- `docs`     → solo documentación
+- `style`    → formato, sin cambio de lógica
+- `refactor` → refactorización sin feat ni fix
+- `test`     → agregar o corregir tests
+- `chore`    → tareas de mantenimiento, deps, config
+
+## Reglas
+
+- Descripción en inglés, máximo 72 caracteres
+- Sin punto final en la primera línea
+- Si los cambios cubren más de un tipo, genera
+  un commit por tipo (no mezcles feat con fix)
+- Si todo es del mismo tipo, un solo commit
+- No inventes contexto que no esté en el diff
+- No agregues "Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>" a los commits.
+
+## Ejemplo
+
+```
+feat(auth): add JWT refresh token support
+```
