@@ -78,6 +78,7 @@ El layout arranca exactamente dos paneles; no hay barra de tabs ni paneles ocult
 ~/.config/nvim/lua/config/lazy.lua      # imports de extras (lang.python aquí)
 ~/.config/nvim/lua/plugins/python.lua   # config Python (LSP, ruff)
 ~/.config/nvim/lua/plugins/extras.lua   # lazygit plugin
+~/.config/zellij/config.kdl             # config principal de Zellij (colores + keybinds)
 ~/.config/zellij/layouts/ide.kdl        # layout del IDE
 ~/.local/bin/ide                        # script de arranque
 ~/.local/bin/                           # nvim, lazygit, ruff, debugpy, zellij
@@ -103,24 +104,48 @@ Paleta personalizada **kuautli** aplicada en toda la stack:
 | Componente | Config |
 |---|---|
 | GNOME Terminal | Perfil "Kuautli" (predeterminado) — fondo `#1C1C2A`, texto `#E0E0E0` |
-| Zellij | `theme "kanagawa"` en `~/.config/zellij/config.kdl` (colores actualizados) |
+| Zellij | `theme "kuautli"` definido inline en `~/.config/zellij/config.kdl` |
 | Neovim | colorscheme `kuautli` — `~/.config/nvim/colors/kuautli.lua` |
 
-## Zellij — config minimalista activa
+## Zellij — `~/.config/zellij/config.kdl`
 
-```
-pane_frames false       # sin bordes entre paneles
-show_startup_tips false # sin tips al arrancar
+```kdl
+theme "kuautli"
+
+pane_frames false
+show_startup_tips false
 show_release_notes false
 mouse_hover_effects false
+
+keybinds {
+    normal {
+        bind "Ctrl f" { ToggleFocusFullscreen; }
+    }
+}
+
+themes {
+    kuautli {
+        fg      "#E0E0E0"
+        bg      "#1C1C2A"
+        black   "#252535"
+        red     "#FC618D"
+        green   "#1AC5B0"
+        yellow  "#F7DB6A"
+        blue    "#58B0E3"
+        magenta "#FC618D"
+        cyan    "#7AD3F8"
+        white   "#E0E0E0"
+        orange  "#F7DB6A"
+    }
+}
 ```
 
 ## Zellij — atajos
 
 | Atajo | Acción |
 |-------|--------|
+| `Ctrl+f` | Maximizar / restaurar panel enfocado (toggle) |
 | `Ctrl+p` + flechas | Navegar entre paneles |
-| `Ctrl+p f` | Pantalla completa (toggle) |
 | `Ctrl+p d` | Cerrar panel |
 | `Ctrl+o d` | Detach (sesión queda viva) |
 | Mouse | Navegar y hacer click directamente |
