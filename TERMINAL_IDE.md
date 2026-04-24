@@ -6,8 +6,8 @@ Stack para desarrollo Python usando la terminal como IDE.
 
 ```
 ┌──────────┬──────────────────────┐
-│ neo-tree │     código .py       │
-│  (nvim)  │      (nvim)          │
+│  snacks  │     código .py       │
+│ explorer │      (nvim)          │
 ├──────────┴──────────────────────┤
 │            claude               │
 └─────────────────────────────────┘
@@ -86,6 +86,31 @@ El layout arranca exactamente dos paneles; no hay barra de tabs ni paneles ocult
 ~/.local/share/fonts/FiraCode/          # FiraCode Nerd Font
 ```
 
+## File Explorer — Snacks.nvim
+
+LazyVim usa `folke/snacks.nvim` como explorador de archivos (reemplazó a neo-tree a finales de 2024).
+
+### Atajos del explorador
+
+| Atajo | Acción |
+|-------|--------|
+| `Space+e` | Toggle explorador |
+| `H` | Mostrar/ocultar archivos gitignored y dotfiles |
+| `I` | Toggle archivos ignorados |
+
+### Archivos gitignored
+
+Por defecto, `Snacks.explorer` oculta archivos en `.gitignore`. Al presionar `H` se muestran, pero con el color de `NonText` (`#3A3A4A` en kuautli) — casi invisible sobre el fondo oscuro.
+
+**Fix:** definir `SnacksPickerPathIgnored` directamente en `~/.config/nvim/colors/kuautli.lua` (no en autocmd, porque snacks carga sus highlights lazy después del evento `ColorScheme`):
+
+```lua
+hi("SnacksPickerPathIgnored", { fg = "#9e9e9e" })  -- plateado
+hi("SnacksPickerPathHidden",  { fg = "#9e9e9e" })
+```
+
+---
+
 ## Temas / Colores
 
 Paleta personalizada **kuautli** aplicada en toda la stack:
@@ -106,6 +131,23 @@ Paleta personalizada **kuautli** aplicada en toda la stack:
 | GNOME Terminal | Perfil "Kuautli" (predeterminado) — fondo `#1C1C2A`, texto `#E0E0E0` |
 | Zellij | `theme "kuautli"` definido inline en `~/.config/zellij/config.kdl` |
 | Neovim | colorscheme `kuautli` — `~/.config/nvim/colors/kuautli.lua` |
+
+### Color de selección en GNOME Terminal
+
+Cuando Zellij corre, establece su propio fondo oscuro (`#1C1C2A`) via ANSI. El color de selección por defecto (tema GTK) queda invisible contra ese fondo. Se configuran colores explícitos para el highlight:
+
+```bash
+PROFILE="b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/$PROFILE/ highlight-colors-set true
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/$PROFILE/ highlight-background-color '#58B0E3'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/$PROFILE/ highlight-foreground-color '#1C1C2A'
+```
+
+| Key | Valor | Efecto |
+|---|---|---|
+| `highlight-colors-set` | `true` | Usa colores custom en lugar del tema GTK |
+| `highlight-background-color` | `#58B0E3` | Azul kuautli — visible sobre fondo oscuro |
+| `highlight-foreground-color` | `#1C1C2A` | Texto oscuro sobre el highlight azul |
 
 ## Zellij — `~/.config/zellij/config.kdl`
 
@@ -161,7 +203,7 @@ themes {
 ### Archivos
 | Atajo | Acción |
 |-------|--------|
-| `Space+e` | Árbol de archivos (toggle) |
+| `Space+e` | Árbol de archivos — Snacks Explorer (toggle) |
 | `Space+ff` | Buscar archivo |
 | `Space+/` | Buscar texto en el proyecto |
 | `:w` | Guardar |
