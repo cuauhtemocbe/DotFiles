@@ -132,6 +132,41 @@ Paleta personalizada **kuautli** aplicada en toda la stack:
 | Zellij | `theme "kuautli"` definido inline en `~/.config/zellij/config.kdl` |
 | Neovim | colorscheme `kuautli` — `~/.config/nvim/colors/kuautli.lua` |
 
+### mini.icons — highlight groups explícitos
+
+`mini.icons` (proveedor de íconos de LazyVim) usa 10 grupos fijos `MiniIcons*`. Por defecto los registra con `default = true` y los vincula a grupos estándar:
+
+```lua
+-- defaults de mini.icons (en su propio código)
+MiniIconsOrange → DiagnosticWarn
+MiniIconsYellow → DiagnosticWarn   -- ambos apuntan al mismo grupo
+```
+
+**Problema:** si tu colorscheme define `DiagnosticWarn` como amarillo, tanto `MiniIconsOrange` como `MiniIconsYellow` renderizan igual — el ícono de `.gitlab-ci.yml` (naranja) aparece amarillo.
+
+**Fix:** definir los 10 grupos explícitamente en `~/.config/nvim/colors/kuautli.lua`. Paleta ampliada con los colores faltantes:
+
+```lua
+-- colores nuevos en la paleta
+orange   = "#FC8C3A",
+green    = "#9ECE6A",
+purple   = "#9D7CD8",
+
+-- grupos mini.icons al final del colorscheme
+hi("MiniIconsAzure",  { fg = c.lblue  })
+hi("MiniIconsBlue",   { fg = c.blue   })
+hi("MiniIconsCyan",   { fg = c.teal   })
+hi("MiniIconsGreen",  { fg = c.green  })
+hi("MiniIconsGrey",   { fg = c.gray   })
+hi("MiniIconsOrange", { fg = c.orange })
+hi("MiniIconsPurple", { fg = c.purple })
+hi("MiniIconsRed",    { fg = c.pink   })
+hi("MiniIconsWhite",  { fg = c.white  })
+hi("MiniIconsYellow", { fg = c.yellow })
+```
+
+> Los grupos con `default = true` solo aplican si el grupo **no está definido**. Definirlos explícitamente en el colorscheme los sobreescribe sin tocar el código de mini.icons.
+
 ### Color de selección en GNOME Terminal
 
 Cuando Zellij corre, establece su propio fondo oscuro (`#1C1C2A`) via ANSI. El color de selección por defecto (tema GTK) queda invisible contra ese fondo. Se configuran colores explícitos para el highlight:
@@ -234,6 +269,46 @@ alias vim='nvim'
 alias vi='nvim'
 alias ide='~/.local/bin/ide'
 ```
+
+## Delta — Git diff viewer
+
+`delta` reemplaza el pager de git con syntax highlighting, números de línea y navegación entre hunks.
+
+**Instalación:**
+```bash
+curl -Lo /tmp/delta.tar.gz "https://github.com/dandavison/delta/releases/download/0.19.2/delta-0.19.2-x86_64-unknown-linux-musl.tar.gz"
+tar -xzf /tmp/delta.tar.gz -C /tmp
+cp /tmp/delta-0.19.2-x86_64-unknown-linux-musl/delta ~/.local/bin/
+```
+
+**Configuración en `~/.gitconfig`:**
+```ini
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    dark = true
+    line-numbers = true
+    side-by-side = false
+    syntax-theme = gruvbox-dark
+
+[diff]
+    colorMoved = default
+```
+
+| Opción | Efecto |
+|---|---|
+| `navigate = true` | `n`/`N` para saltar entre hunks |
+| `side-by-side = false` | Vista unificada (no split) |
+| `syntax-theme` | Tema de colores del código |
+
+Se activa automáticamente en `git diff`, `git show`, `git log -p`.
+
+---
 
 ## Reinstalar desde cero
 
