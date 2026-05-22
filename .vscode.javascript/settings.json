@@ -1,6 +1,5 @@
 {
-  // ===== WINDOW & EDITOR SETTINGS =====
-  "window.restoreWindows": "none",
+  // ===== EDITOR SETTINGS =====
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.semanticHighlighting.enabled": false,
@@ -30,9 +29,6 @@
   // ===== CODE FORMATTING =====
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
 
   // ===== SYNTAX HIGHLIGHTING =====
   "editor.tokenColorCustomizations": {
