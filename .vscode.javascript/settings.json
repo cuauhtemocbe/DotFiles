@@ -1,5 +1,11 @@
 {
   // ===== EDITOR SETTINGS =====
+  "workbench.activityBar.location": "hidden",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "explorer.compactFolders": true,
+  "editor.scrollbar.vertical": "auto",
+  "editor.padding.top": 16,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.semanticHighlighting.enabled": false,
