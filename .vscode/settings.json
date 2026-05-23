@@ -10,6 +10,81 @@
   "editor.fontLigatures": true,
   "editor.semanticHighlighting.enabled": false,
 
+  // ===== TERMINAL SETTINGS =====
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.2,
+  "workbench.colorCustomizations": {
+    "[Monokai Pro (Filter Spectrum)]": {
+      // Editor
+      "editor.background": "#121212",
+      "editor.lineHighlightBackground": "#1a1a1a",
+      "editorGroupHeader.tabsBackground": "#121212",
+      "tab.activeBackground": "#121212",
+      "tab.inactiveBackground": "#121212",
+
+      // Sidebar
+      "sideBar.background": "#121212",
+      "sideBar.border": "#1a1a1a",
+      "sideBarSectionHeader.background": "#121212",
+
+      // Activity Bar
+      "activityBar.background": "#121212",
+      "activityBar.border": "#1a1a1a",
+
+      // Status Bar
+      "statusBar.background": "#121212",
+      "statusBar.border": "#1a1a1a",
+      "statusBar.debuggingBackground": "#FC618D",
+      "statusBar.noFolderBackground": "#121212",
+
+      // Panel (Debug, Output, Problems, etc.)
+      "panel.background": "#121212",
+      "panel.border": "#1a1a1a",
+      "panelTitle.activeBorder": "#1AC5B0",
+      "panelTitle.inactiveForeground": "#8d8c8c",
+
+      // Title Bar
+      "titleBar.activeBackground": "#121212",
+      "titleBar.inactiveBackground": "#121212",
+      "titleBar.border": "#1a1a1a",
+
+      // Lists and Trees
+      "list.activeSelectionBackground": "#1AC5B020",
+      "list.inactiveSelectionBackground": "#1AC5B010",
+      "list.hoverBackground": "#1a1a1a",
+
+      // Terminal colors (ANSI)
+      "terminal.ansiBlack": "#121212",
+      "terminal.ansiBrightBlack": "#8d8c8c",
+      "terminal.ansiRed": "#FC618D",
+      "terminal.ansiBrightRed": "#FF8AAA",
+      "terminal.ansiGreen": "#1AC5B0",
+      "terminal.ansiBrightGreen": "#3FD9C4",
+      "terminal.ansiYellow": "#F7DB6A",
+      "terminal.ansiBrightYellow": "#F9E694",
+      "terminal.ansiBlue": "#58B0E3",
+      "terminal.ansiBrightBlue": "#7DC4F0",
+      "terminal.ansiMagenta": "#FC618D",
+      "terminal.ansiBrightMagenta": "#FF8AAA",
+      "terminal.ansiCyan": "#7AD3F8",
+      "terminal.ansiBrightCyan": "#9EE0FB",
+      "terminal.ansiWhite": "#E0E0E0",
+      "terminal.ansiBrightWhite": "#FFFFFF",
+
+      // Terminal foreground/background
+      "terminal.foreground": "#E0E0E0",
+      "terminal.background": "#121212",
+      "terminalCursor.foreground": "#1AC5B0",
+      "terminalCursor.background": "#121212",
+
+      // Selection
+      "terminal.selectionBackground": "#58B0E350",
+      "editor.selectionBackground": "#58B0E350",
+      "editor.selectionHighlightBackground": "#58B0E320"
+    }
+  },
+
   // ===== FILE MANAGEMENT =====
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
@@ -23,11 +98,12 @@
     "**/.mcp.json": true,
     "**/.coverage.xml": true,
     "**/sonar-project.properties": true,
-    "**/poetry.lock": true,
+    "**/poetry.lock": true
+  },
 
   // ===== PYTHON SETTINGS =====
   "python.formatting.provider": "black",
-  
+
   // Python Testing
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
