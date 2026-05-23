@@ -1,6 +1,11 @@
 {
   // ===== WINDOW & EDITOR SETTINGS =====
-  "window.restoreWindows": "none",
+  "workbench.activityBar.location": "hidden",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "explorer.compactFolders": true,
+  "editor.scrollbar.vertical": "auto",
+  "editor.padding.top": 16,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.semanticHighlighting.enabled": false,
@@ -8,6 +13,17 @@
   // ===== FILE MANAGEMENT =====
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
+  "files.exclude": {
+    "**/.codegraph": true,
+    "**/.claudeignore": true,
+    "**/.dockerignore": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/.venv": true,
+    "**/.mcp.json": true,
+    "**/.coverage.xml": true,
+    "**/sonar-project.properties": true,
+    "**/poetry.lock": true,
 
   // ===== PYTHON SETTINGS =====
   "python.formatting.provider": "black",
