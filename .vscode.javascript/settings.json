@@ -32,6 +32,16 @@
     "**/tsconfig.build.json": true
   },
 
+  // ===== TERMINAL =====
+  "terminal.integrated.profiles.linux": {
+    "Claude Code": {
+      "path": "bash",
+      "args": ["-c", "claude; exec bash"],
+      "icon": "sparkle",
+      "color": "terminal.ansiCyan"
+    }
+  },
+
   // ===== CODE FORMATTING =====
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
@@ -181,7 +191,7 @@
           "source.ts",
           "source.jsx",
           "source.tsx"
-        ],
+      ],
         "settings": {
           "foreground": "#58B0E3"
         }
