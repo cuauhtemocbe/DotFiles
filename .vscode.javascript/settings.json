@@ -33,12 +33,29 @@
   },
 
   // ===== TERMINAL =====
+  "terminal.integrated.defaultProfile.linux": "Bash",
   "terminal.integrated.profiles.linux": {
+    "Bash": {
+      "path": "bash",
+      "icon": "zap",
+      "color": "terminal.ansiBlue"
+    },
     "Claude Code": {
       "path": "bash",
       "args": ["-c", "claude; exec bash"],
-      "icon": "sparkle",
-      "color": "terminal.ansiCyan"
+      "icon": "claude",
+      "color": "terminal.ansiYellow"
+    },
+    "JavaScript": {
+      "path": "bash",
+      "args": ["-c", "pnpm start:dev; exec bash"],
+      "icon": "code",
+      "color": "terminal.ansiGreen"
+    },
+    "Jest": {
+      "path": "bash",
+      "icon": "beaker",
+      "color": "terminal.ansiGreen"
     }
   },
 
