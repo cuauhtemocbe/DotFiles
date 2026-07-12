@@ -1,0 +1,83 @@
+// ============================================================================
+// Este archivo solo sirve como REFERENCIA/BACKUP para replicar la config en
+// otra laptop. Los atajos reales deben vivir en el archivo global de tu perfil:
+//   Linux:   ~/.config/Code/User/keybindings.json
+//   macOS:   ~/Library/Application Support/Code/User/keybindings.json
+//   Windows: %APPDATA%\Code\User\keybindings.json
+//
+// Para replicar en otra laptop: copiar el array de abajo dentro del
+// keybindings.json global de esa maquina.
+// ============================================================================
+[
+      {
+          "key": "ctrl+shift+t",
+          "command": "-workbench.action.reopenClosedEditor"
+      },
+      {
+          "key": "ctrl+shift+t",
+          "command": "workbench.view.testing"
+      },
+      {
+          "key": "shift+enter",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+              "text": "\r"
+          },
+          "when": "terminalFocus"
+      },
+      {
+          // Abre terminal nueva con el perfil "Claude Code" (definido en settings.json, ver abajo)
+          "key": "ctrl+shift+1",
+          "command": "workbench.action.terminal.newWithProfile",
+          "args": { "profileName": "Claude Code" }
+      },
+      {
+          // Abre terminal nueva con el perfil "JavaScript" (definido en settings.json, ver abajo)
+          "key": "ctrl+shift+2",
+          "command": "workbench.action.terminal.newWithProfile",
+          "args": { "profileName": "JavaScript" }
+      },
+      {
+          "key": "ctrl+m",
+          "command": "workbench.action.toggleMaximizedPanel"
+      }
+  ]
+
+// ============================================================================
+// REFERENCIA: settings.json necesario para que "Claude Code" y "JavaScript"
+// existan como perfiles de terminal (esto NO es leído por VS Code aca, es
+// solo para copiar a mano en el settings.json GLOBAL de la otra laptop):
+//   Linux:   ~/.config/Code/User/settings.json
+//   macOS:   ~/Library/Application Support/Code/User/settings.json
+//   Windows: %APPDATA%\Code\User\settings.json
+//
+// {
+//   "terminal.integrated.profiles.linux": {
+//     "bash": {
+//       "path": "bash",
+//       "icon": "code",              // icono de VS Code, color verde
+//       "color": "terminal.ansiGreen"
+//     },
+//     "Claude Code": {
+//       "path": "bash",
+//       "args": ["-c", "claude; exec bash"],
+//       "icon": "claude",            // icono nativo de Claude (VS Code 1.128+)
+//       "color": "terminal.ansiMagenta"  // repintado a naranja, ver abajo
+//     },
+//     "JavaScript": {
+//       "path": "bash",
+//       "args": ["-c", "node; exec bash"],
+//       "icon": "symbol-method"
+//     }
+//   },
+//   "terminal.integrated.defaultProfile.linux": "bash",
+//
+//   // El perfil "color" solo acepta los 8 IDs ANSI fijos (no existe "orange"),
+//   // asi que se repinta el slot de magenta a naranja de forma global,
+//   // sin importar el tema activo (clave sin "[Tema]" alrededor):
+//   "workbench.colorCustomizations": {
+//     "terminal.ansiMagenta": "#fc9867",
+//     "terminal.ansiBrightMagenta": "#fc9867"
+//   }
+// }
+// ============================================================================
