@@ -33,6 +33,14 @@
 
 Explora los archivos markdown para encontrar instrucciones de configuración, consejos y personalizaciones para cada herramienta. Puedes copiar o adaptar las configuraciones según tus necesidades.
 
+## 🔒 Hook de pre-commit (escaneo de secretos)
+
+El repo versiona archivos de configuración que podrían contener credenciales (`.mcp.json`, `.vscode/settings.json`). Para bloquear un commit con un secreto literal, activa el hook una sola vez por clon (requiere [gitleaks](https://github.com/gitleaks/gitleaks)):
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ## 📄 Licencia
 
 Este repositorio contiene mi configuración personal, pero eres libre de usar, modificar o compartir cualquier archivo si te resulta útil. Los términos están en [LICENSE](LICENSE) (MIT). ¡Espero que encuentres algo que te ayude a mejorar tu entorno!
