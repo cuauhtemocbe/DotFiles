@@ -1,2 +1,8 @@
 opencode.json
 .claude/
+
+# Credenciales y config local-only
+.env
+.env.*
+!.env.example
+.codegraph/
