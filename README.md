@@ -2,7 +2,7 @@
 # 🗂️ DotFiles
 
 ![Estado del repositorio](https://img.shields.io/badge/estado-activo-brightgreen)
-![Licencia](https://img.shields.io/badge/licencia-personal-blue)
+[![Licencia](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE)
 ![SO](https://img.shields.io/badge/SO-Linux-FCC624?logo=linux&logoColor=black)
 
 ¡Bienvenido! Este repositorio reúne mis archivos de configuración y documentación para distintas herramientas y entornos que uso día a día. Es mi espacio personal para respaldar y compartir mis dotfiles, pero si algo te resulta útil, ¡adelante! Puedes tomar, adaptar o mejorar cualquier configuración.
@@ -35,4 +35,4 @@ Explora los archivos markdown para encontrar instrucciones de configuración, co
 
 ## 📄 Licencia
 
-Este repositorio contiene mi configuración personal, pero eres libre de usar, modificar o compartir cualquier archivo si te resulta útil. ¡Espero que encuentres algo que te ayude a mejorar tu entorno!
+Este repositorio contiene mi configuración personal, pero eres libre de usar, modificar o compartir cualquier archivo si te resulta útil. Los términos están en [LICENSE](LICENSE) (MIT). ¡Espero que encuentres algo que te ayude a mejorar tu entorno!
