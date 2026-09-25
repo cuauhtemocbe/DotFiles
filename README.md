@@ -42,6 +42,13 @@ El repo versiona archivos de configuración que podrían contener credenciales (
 git config core.hooksPath .githooks
 ```
 
+## ✅ Validación
+
+Este repo no tiene CI ni suite de tests: son archivos de configuración y documentación, sin código que compilar o probar. Es una decisión deliberada para un repo de un solo dueño. La validación es local:
+
+- El hook de pre-commit escanea secretos en cada commit.
+- Para una revisión más amplia (secretos, configuraciones inseguras) se corre `trivy fs .` a mano cuando hace falta.
+
 ## 📄 Licencia
 
 Este repositorio contiene mi configuración personal, pero eres libre de usar, modificar o compartir cualquier archivo si te resulta útil. Los términos están en [LICENSE](LICENSE) (MIT). ¡Espero que encuentres algo que te ayude a mejorar tu entorno!
